@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
+#    By: smunio <smunio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 16:35:40 by sammeuss          #+#    #+#              #
-#    Updated: 2023/11/08 17:09:24 by sammeuss         ###   ########.fr        #
+#    Updated: 2023/11/09 12:43:09 by smunio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,19 +17,20 @@
 # #Y88   8P  8b   `Y' 888  `8p 88bdPPP     88P        8888 888PPPPP 88bdPPP  #
 # ############################################################################
 
-NAME        =	megaphone
+NAME        =	Phonebook
 PRINT_NAME  =	CPP00
 PRINT_PREFIX= \033[1m\033[38;5;240m[\033[0m\033[38;5;250m$(PRINT_NAME)\033[1m\033[38;5;240m] \033[38;5;105m~\033[0m
 
 SRC 		=	main	\
 				Phonebook.class \
+				Contact.class \
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS        = $(addsuffix .cpp, $(SRC))
 OBJS        = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
-OBJ_DIR 	= obj/
+OBJ_DIR 	= obj
 
 NUM_FILES   = $(words $(SRCS))
 BAR_LENGTH  = $(shell echo "$$(($(NUM_FILES)*2))")

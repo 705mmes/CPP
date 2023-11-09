@@ -3,17 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:50:30 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/11/08 17:14:16 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/11/09 13:47:45 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.class.hpp"
+#include "Phonebook.class.hpp"
 
 int	main()
 {
 	Phonebook	instance;
 	
+	while (instance.exit == 0)
+	{
+		std::cin >> instance.line;
+		std::cout << "line =" << instance.line;
+		instance.exit = 1;
+	}
 }
