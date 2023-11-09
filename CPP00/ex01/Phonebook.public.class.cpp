@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:57:30 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/11/09 23:01:37 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/11/09 23:54:05 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void	Phonebook::choose_command()
 	if (c_index > 7)
 		c_index = 0;
 	if (command == 'A')
-		this->add();
+		add();
 	else if (command == 'S')
-		this->search();
+		search();
 	else if (command == 'E')
 		exit++;
 	return ;

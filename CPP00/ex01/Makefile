@@ -6,7 +6,7 @@
 #    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 16:35:40 by sammeuss          #+#    #+#              #
-#    Updated: 2023/11/09 23:49:35 by sammeuss         ###   ########.fr        #
+#    Updated: 2023/11/09 23:56:40 by sammeuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,8 @@ PRINT_PREFIX= \033[1m\033[38;5;240m[\033[0m\033[38;5;250m$(PRINT_NAME)\033[1m\03
 
 SRC 		=	main	\
 				Contact.class \
-				Phonebook.class.public \
-				Phonebook.class.private \
+				Phonebook.public.class \
+				Phonebook.private.class \
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
