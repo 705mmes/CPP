@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smunio <smunio@student.42.fr>              +#+  +:+       +#+         #
+#    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 16:35:40 by sammeuss          #+#    #+#              #
-#    Updated: 2023/11/09 12:43:09 by smunio           ###   ########.fr        #
+#    Updated: 2023/11/09 22:13:27 by sammeuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ PRINT_NAME  =	CPP00
 PRINT_PREFIX= \033[1m\033[38;5;240m[\033[0m\033[38;5;250m$(PRINT_NAME)\033[1m\033[38;5;240m] \033[38;5;105m~\033[0m
 
 SRC 		=	main	\
-				Phonebook.class \
+				Phonebook.class.public \
+				Phonebook.class.private \
 				Contact.class \
 
 CC = c++

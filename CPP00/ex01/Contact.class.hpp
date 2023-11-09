@@ -3,27 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:51:06 by smunio            #+#    #+#             */
-/*   Updated: 2023/11/09 13:20:57 by smunio           ###   ########.fr       */
+/*   Updated: 2023/11/09 22:56:04 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef CONTACT_CLASS_H
+# define CONTACT_CLASS_H
+# include <iostream>
+# include <string>
 
 class Contact
 {
 	public:
 		Contact();
 		~Contact();
-		void	set_contact(void);
-	private :
-		int		nb_contact;
-		int		index;
-		char	*first_name;
-		char	*last_name;
-		char	*nickname;
-		char	*phone_number;
-		char	*darkest_secret;
+		int			nb;
+		std::string	first_name;
+		std::string	last_name;
+		std::string	nickname;
+		std::string	phone_number;
+		std::string	darkest_secret;
 };
+
+#endif
