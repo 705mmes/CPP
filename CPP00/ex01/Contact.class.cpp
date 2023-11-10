@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:51:11 by smunio            #+#    #+#             */
-/*   Updated: 2023/11/09 23:50:53 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/11/10 12:53:24 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 Contact::Contact()
 {
-	std::cout << "Contact constructor called" << std::endl;
 	nb = 0;
 	return ;
 }
 
 Contact::~Contact()
 {
-	std::cout << "Contact destructor called" << std::endl;
 	return ;
 }

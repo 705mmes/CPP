@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.class.public.cpp                         :+:      :+:    :+:   */
+/*   Phonebook.public.cpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:57:30 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/11/09 23:54:05 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/11/10 12:53:03 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Phonebook::Phonebook()
 {
-	std::cout << "Phonebook constructor called" << std::endl;
 	exit = 0;
 	c_index = 0;
 	nb_contact = 0;
@@ -23,7 +22,6 @@ Phonebook::Phonebook()
 
 Phonebook::~Phonebook()
 {
-	std::cout << "Phonebook destructor called" << std::endl;
 	return ;
 }
 

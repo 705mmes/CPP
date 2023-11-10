@@ -6,7 +6,7 @@
 #    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 16:35:40 by sammeuss          #+#    #+#              #
-#    Updated: 2023/11/09 23:56:40 by sammeuss         ###   ########.fr        #
+#    Updated: 2023/11/10 12:01:16 by sammeuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,9 @@ PRINT_PREFIX= \033[1m\033[38;5;240m[\033[0m\033[38;5;250m$(PRINT_NAME)\033[1m\03
 
 SRC 		=	main	\
 				Contact.class \
-				Phonebook.public.class \
-				Phonebook.private.class \
+				Phonebook.public \
+				Phonebook.private \
+				Phonebook.private.print \
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
@@ -42,7 +43,7 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 		@printf "$(PRINT_PREFIX)\033[0;38;5;226m Compiling \033[0m["
 		@for i in $(shell seq 1 $(BAR_LENGTH)); do \
 			sleep 0.1; \
-			printf "\033[38;5;40m█"; \
+			printf "\033[38;5;40m▲▼"; \
 		done
 		@printf "\033[38;5;40m] \033[0m\n"
 		@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
