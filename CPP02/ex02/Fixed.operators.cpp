@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.operators.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:40:55 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 12:33:11 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:37:32 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Fixed &Fixed::operator=(Fixed const & rhs)
 {
+	if (this == &rhs)
+		return (*this);
 	this->_nb = rhs._nb;
 	return (*this);
 }
@@ -96,7 +98,7 @@ bool	Fixed::operator!=(Fixed const & rhs) const
 	return (this->_nb != rhs._nb);
 }
 
-ostream &	operator<<(ostream & o, Fixed const & rhs)
+std::ostream &	operator<<(std::ostream & o, Fixed const & rhs)
 {
 	o << rhs.to_float();
 	return (o);

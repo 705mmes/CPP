@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fragtrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:23:18 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 16:32:23 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:11:45 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@
 # include <cmath>
 # include <string>
 
-using namespace std;
-
 class	Fragtrap : public Claptrap
 {
 	public:
 		Fragtrap();
-		Fragtrap(string name);
+		Fragtrap(std::string name);
 		Fragtrap(const Fragtrap &src);
 		~Fragtrap();
 		Fragtrap & operator=(const Fragtrap & rhs);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:20:42 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 11:17:53 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:35:04 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <cmath>
 # include <string>
 # include <fstream>
-
-using namespace std;
 
 class Fixed
 {
@@ -57,6 +55,6 @@ class Fixed
 		static const int	_nb_bits;
 };
 
-ostream &	operator<<(ostream & o, Fixed const & rhs);
+std::ostream &	operator<<(std::ostream & o, Fixed const & rhs);
 
 #endif

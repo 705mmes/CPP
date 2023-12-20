@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:42:06 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 11:17:07 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:32:13 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@ const int Fixed::_nb_bits = 8;
 
 Fixed::Fixed()
 {
-	cout << "Default constructor called" << endl;
-	this->_nb = 0;
+	std::cout << "Default constructor called" << std::endl;
+	this->_nb = 42;
 	return ;
 }
 
 Fixed::~Fixed()
 {
-	cout << "Destructor called" << endl;
+	std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed(const Fixed &src)
 {
-	cout << "Copy constructor called" << endl;
-	this->_nb = src._nb;
+	std::cout << "Copy constructor called" << std::endl;
+	*this = src;
 	return ;
 }
 
@@ -42,12 +42,14 @@ int	Fixed::set_raw_bits(int const raw)
 
 int	Fixed::get_raw_bits(void) const
 {
-	cout << "get_raw_bits called" << endl;
+	std::cout << "get_raw_bits called" << std::endl;
 	return (this->_nb);
 }
 
 Fixed &Fixed::operator=(Fixed const & rhs)
 {
+	if (this == &rhs)
+		return (*this);
 	this->_nb = rhs._nb;
 	return (*this);
 }

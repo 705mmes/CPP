@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:23:17 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 16:30:44 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:32:57 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ int main()
 {
 	Fragtrap	me("sam");
 
-	// while (me.get_energy_points() > 0 && me.get_hit_points() > 0)
-	// {
-	// 	me.attack("leon");
-	// 	me.take_dmg(100);
-	// 	cout << "got " << me.get_hit_points() << " hit points left" << endl;
-	// 	me.be_repaired(2);
-	// 	cout << "got " << me.get_hit_points() << " hit points left" << endl;
-	// }
+	while (me.get_energy_points() > 0 && me.get_hit_points() > 0)
+	{
+		me.attack("leon");
+		me.take_dmg(90);
+		std::cout << "got " << me.get_hit_points() << " hit points left" << std::endl;
+		me.be_repaired(2);
+		std::cout << "got " << me.get_hit_points() << " hit points left" << std::endl;
+	}
 	me.high_five_guys();
 	return (0);
 }

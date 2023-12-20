@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Claptrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:20:08 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 14:50:06 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:02:32 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,37 +17,54 @@ Claptrap::Claptrap()
 	return ;
 }
 
-Claptrap::Claptrap(string name) : _name(name), _hit_points(10), _energy_points(10), _attack_dmg(0)
+Claptrap::Claptrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_dmg(0)
 {
-	cout << "Default construcor called" << endl;
+	std::cout << "Default construcor called" << std::endl;
 	return ;
 }
 
 Claptrap::~Claptrap()
 {
-	cout << "Destructor called" << endl;
+	std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
-void	Claptrap::attack(const string &target)
+Claptrap::Claptrap(const Claptrap &src)
+{
+	*this = src;
+	return ;
+}
+
+Claptrap	&Claptrap::operator=(const Claptrap &rhs)
+{
+	if (this == &rhs)
+		return (*this);
+	this->_attack_dmg = rhs._attack_dmg;
+	this->_energy_points = rhs._energy_points;
+	this->_hit_points = rhs._hit_points;
+	this->_name = rhs._name;
+	return (*this);
+}
+
+void	Claptrap::attack(const std::string &target)
 {
 	if (this->_energy_points > 0)
 	{
-		cout << "Claptrap " << this->_name << " attacks " << target << " for " << this->_attack_dmg << "points of damage" << endl;
+		std::cout << "Claptrap " << this->_name << " attacks " << target << " for " << this->_attack_dmg << "points of damage" << std::endl;
 		this->_energy_points--;
 	}
 	else
-		cout << this->_name << " is exhausted" << endl;
+		std::cout << this->_name << " is exhausted" << std::endl;
 	return ;
 }
 
 void	Claptrap::take_dmg(unsigned int amount)
 {
-	cout << "Claptrap " << this->_name << " takes " << amount << " points of damage" << endl;
+	std::cout << "Claptrap " << this->_name << " takes " << amount << " points of damage" << std::endl;
 	this->_hit_points -= amount;
 	if (_hit_points <= 0)
 	{
-		cout << "Claptrap " << this->_name << " is ded" << endl;
+		std::cout << "Claptrap " << this->_name << " is ded" << std::endl;
 		exit(0);
 	}
 	return ;
@@ -57,12 +74,12 @@ void	Claptrap::be_repaired(unsigned int amount)
 {
 	if (this->_energy_points > 0)
 	{
-		cout << "Claptrap " << this->_name << " gains " << amount << " hit points" << endl;
+		std::cout << "Claptrap " << this->_name << " gains " << amount << " hit points" << std::endl;
 		this->_hit_points+= amount;
 		this->_energy_points--;
 	}
 	else
-		cout << "Claptrap " << this->_name << " is exhausted" << endl;
+		std::cout << "Claptrap " << this->_name << " is exhausted" << std::endl;
 	return ;
 }
 

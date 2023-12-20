@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:20:05 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 14:40:38 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:45:04 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Claptrap.class.hpp"
-#include "Scavtrap.class.hpp"
 
 int main()
 {
@@ -21,9 +20,9 @@ int main()
 	{
 		me.attack("leon");
 		me.take_dmg(4);
-		cout << "got " << me.get_hit_points() << " hit points left" << endl;
+		std::cout << "got " << me.get_hit_points() << " hit points left" << std::endl;
 		me.be_repaired(2);
-		cout << "got " << me.get_hit_points() << " hit points left" << endl;
+		std::cout << "got " << me.get_hit_points() << " hit points left" << std::endl;
 	}
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:42:08 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 11:16:42 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:27:22 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FIXED_CLASS_HPP
 # include <iostream>
 
-using namespace std;
 
 class Fixed
 {
@@ -22,12 +21,12 @@ class Fixed
 		Fixed();
 		~Fixed();
 		Fixed(const Fixed &src);
+		Fixed &operator=(Fixed const & rhs);
 		int	get_raw_bits(void) const;
 		int	set_raw_bits(int const raw);
 	private:
 		int					_nb;
 		static const int	_nb_bits;
 };
-Fixed &	operator=(Fixed const & rhs);
 
 #endif

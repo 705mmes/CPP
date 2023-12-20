@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Scavtrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:23:13 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 16:32:35 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:11:41 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 Scavtrap::Scavtrap() : Claptrap()
 {
-	cout << "ScavTrap constructor" << endl;
+	std::cout << "ScavTrap constructor" << std::endl;
 	return ;
 }
 
-Scavtrap::Scavtrap(string name) : Claptrap(name)
+Scavtrap::Scavtrap(std::string name) : Claptrap(name)
 {
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_dmg = 20;
-	cout << "ScavTrap constructor" << endl;
+	std::cout << "ScavTrap constructor" << std::endl;
 	return ;
 }
 
@@ -38,7 +38,7 @@ Scavtrap::Scavtrap(const Scavtrap &src)
 
 Scavtrap::~Scavtrap()
 {
-	cout << "ScavTrap destructor" << endl;
+	std::cout << "ScavTrap destructor" << std::endl;
 	return ;
 }
 
@@ -51,20 +51,20 @@ Scavtrap &Scavtrap::operator=(Scavtrap const & rhs)
 	return (*this);
 }
 
-void	Scavtrap::attack(string target)
+void	Scavtrap::attack(std::string target)
 {
 	if (this->_energy_points > 0)
 	{
-		cout << "Scavtrap " << this->_name << " attacks " << target << " for " << this->_attack_dmg << "points of damage" << endl;
+		std::cout << "Scavtrap " << this->_name << " attacks " << target << " for " << this->_attack_dmg << "points of damage" << std::endl;
 		this->_energy_points--;
 	}
 	else
-		cout << "Scavtrap " << this->_name << " is exhausted" << endl;
+		std::cout << "Scavtrap " << this->_name << " is exhausted" << std::endl;
 	return ;
 }
 
 void	Scavtrap::guard_guate()
 {
-	cout << "Scavtrap " << this->_name << " is now in gate mode" << endl;
+	std::cout << "Scavtrap " << this->_name << " is now in gate mode" << std::endl;
 	return ;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 11:52:00 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 11:17:19 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:33:30 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,34 @@ const int Fixed::_nb_bits = 8;
 
 Fixed::Fixed()
 {
-	cout << "Default constructor called" << endl;
+	std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed(const Fixed &src)
 {
-	cout << "Copy constructor called" << endl;
+	std::cout << "Copy constructor called" << std::endl;
 	this->_nb = src._nb;
 	return ;
 }
 
 Fixed::Fixed(const int nb)
 {
-	cout << "Int constructor called" << endl;
+	std::cout << "Int constructor called" << std::endl;
 	this->_nb = nb * pow(2, 8) + 0.5;
 	return ;
 }
 
 Fixed::Fixed(const float nb)
 {
-	cout << "Float constructor called" << endl;
+	std::cout << "Float constructor called" << std::endl;
 	this->_nb = nb * pow(2, 8) + 0.5;
 	return ;
 }
 
 Fixed::~Fixed()
 {
-	cout << "Destructor called" << endl;
+	std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
@@ -74,7 +74,7 @@ Fixed &Fixed::operator=(Fixed const & rhs)
 	return (*this);
 }
 
-ostream &	operator<<(ostream & o, Fixed const & rhs)
+std::ostream &	operator<<(std::ostream & o, Fixed const & rhs)
 {
 	o << static_cast<float>(rhs.get_raw_bits() / pow(2, 8));
 	return (o);

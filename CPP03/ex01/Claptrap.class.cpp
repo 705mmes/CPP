@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Claptrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:23:15 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 15:19:32 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:46:27 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Claptrap::Claptrap()
 {
-	cout << "ClapTrap constructor" << endl;
+	std::cout << "ClapTrap constructor" << std::endl;
 	return ;
 }
 
-Claptrap::Claptrap(string name) : _name(name), _hit_points(10), _energy_points(10), _attack_dmg(0)
+Claptrap::Claptrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_dmg(0)
 {
-	cout << "Claptrap construcor called" << endl;
+	std::cout << "Claptrap construcor called" << std::endl;
 	return ;
 }
 
@@ -35,7 +35,7 @@ Claptrap::Claptrap(const Claptrap &src)
 
 Claptrap::~Claptrap()
 {
-	cout << "Claptrap Destructor called" << endl;
+	std::cout << "Claptrap Destructor called" << std::endl;
 	return ;
 }
 

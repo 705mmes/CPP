@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fragtrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:24:29 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 16:29:20 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:12:13 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 Fragtrap::Fragtrap() : Claptrap()
 {
-	cout << "FragTrap constructor" << endl;
+	std::cout << "FragTrap constructor" << std::endl;
 	return ;
 }
 
-Fragtrap::Fragtrap(string name) : Claptrap(name)
+Fragtrap::Fragtrap(std::string name) : Claptrap(name)
 {
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_dmg = 20;
-	cout << "FragTrap constructor" << endl;
+	std::cout << "FragTrap constructor" << std::endl;
 	return ;
 }
 
@@ -38,7 +38,7 @@ Fragtrap::Fragtrap(const Fragtrap &src)
 
 Fragtrap::~Fragtrap()
 {
-	cout << "FragTrap destructor" << endl;
+	std::cout << "FragTrap destructor" << std::endl;
 	return ;
 }
 
@@ -53,6 +53,6 @@ Fragtrap &Fragtrap::operator=(Fragtrap const & rhs)
 
 void	Fragtrap::high_five_guys()
 {
-	cout << "Fragtrap slaps nothing" << endl;
+	std::cout << "Fragtrap slaps nothing" << std::endl;
 	return ;
 }

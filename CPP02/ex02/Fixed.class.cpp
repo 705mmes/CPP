@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:21:01 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 12:17:09 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:38:23 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,33 @@ const int Fixed::_nb_bits = 8;
 
 Fixed::Fixed() : _nb(0)
 {
-	cout << "Default constructor called" << endl;
+	std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed(const Fixed &src)
 {
-	cout << "Copy constructor called" << endl;
-	this->_nb = src._nb;
+	std::cout << "Copy constructor called" << std::endl;
+	*this = src;
 	return ;
 }
 
 Fixed::Fixed(const int nb)
 {
-	cout << "Int constructor called" << endl;
+	std::cout << "Int constructor called" << std::endl;
 	this->_nb = nb * pow(2, this->_nb_bits) + 0.5;
 	return ;
 }
 
 Fixed::Fixed(const float nb)
 {
-	cout << "Float constructor called" << endl;
-	cout << nb << endl;
+	std::cout << "Float constructor called" << std::endl;
 	this->_nb = nb * pow(2, this->_nb_bits) + 0.5;
 	return ;
 }
 
 Fixed::~Fixed()
 {
-	cout << "Destructor called" << endl;
+	std::cout << "Destructor called" << std::endl;
 	return ;
 }
