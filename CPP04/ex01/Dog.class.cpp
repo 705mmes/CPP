@@ -1,50 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.class.cpp                                   :+:      :+:    :+:   */
+/*   Dog.class.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 13:00:04 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/14 16:52:24 by sammeuss         ###   ########.fr       */
+/*   Created: 2023/12/14 13:04:26 by sammeuss          #+#    #+#             */
+/*   Updated: 2023/12/14 16:52:16 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.class.hpp"
+#include "Dog.class.hpp"
 
-Animal::Animal()
+Dog::Dog()
 {
-	cout << "Animal constructor called" << endl;
-	this->_type = "Animal";
+	cout << "Dog constructor called" << endl;
+	this->_type = "Dog";
 	return ;
 }
 
-Animal::Animal(Animal const &src)
+Dog::Dog(Dog const &src)
 {
-	cout << "Animal copy constructor called" << endl;
+	cout << "Dog copy constructor called" << endl;
 	this->_type = src._type;
 	return ;
 }
 
-Animal::~Animal()
+Dog::~Dog()
 {
-	cout << "Animal destructor called" << endl;
+	cout << "Dog destructor called" << endl;
 	return ;
 }
 
-Animal &Animal::operator=(Animal const &rhs)
+Dog &Dog::operator=(Dog const &rhs)
 {
 	this->_type = rhs._type;
 	return (*this);
 }
 
-void	Animal::make_sound() const
+void	Dog::make_sound() const
 {
 	cout << "* " << this->_type << " sound *" << endl;
 	return ;
-}
-
-string	Animal::get_type() const
-{
-	return (this->_type);
 }

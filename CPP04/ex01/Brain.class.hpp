@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.class.hpp                                   :+:      :+:    :+:   */
+/*   Brain.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 12:57:24 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/14 16:48:25 by sammeuss         ###   ########.fr       */
+/*   Created: 2023/12/15 14:44:14 by sammeuss          #+#    #+#             */
+/*   Updated: 2023/12/15 14:50:21 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_CLASS_HPP
-# define ANIMAL_CLASS_HPP
+#ifndef BRAIN_CLASS_HPP
+# define BRAIN_CLASS_HPP
 # include <iostream>
 # include <string>
 # include <fstream>
@@ -19,17 +19,15 @@
 
 using namespace std;
 
-class Animal
+class Brain
 {
 	public:
-		Animal();
-		Animal(Animal const &src);
-		virtual ~Animal();
-		Animal & operator=(Animal const &rhs);
-		virtual void	make_sound() const;
-		string			get_type() const;
-	protected:
-		string	_type;
+		Brain();
+		Brain(Brain const &src);
+		virtual ~Brain();
+		Brain & operator=(Brain const &rhs);
+	private:
+		string	ideas[100];
 };
 
 #endif

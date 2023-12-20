@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.class.hpp                                   :+:      :+:    :+:   */
+/*   Dog.class.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 12:57:24 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/14 16:48:25 by sammeuss         ###   ########.fr       */
+/*   Created: 2023/12/14 14:15:02 by sammeuss          #+#    #+#             */
+/*   Updated: 2023/12/14 15:41:31 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_CLASS_HPP
-# define ANIMAL_CLASS_HPP
+#ifndef DOG_CLASS_HPP
+# define DOG_CLASS_HPP
 # include <iostream>
 # include <string>
 # include <fstream>
 # include <cmath>
+# include "Animal.class.hpp"
 
 using namespace std;
 
-class Animal
+class Dog : public Animal
 {
 	public:
-		Animal();
-		Animal(Animal const &src);
-		virtual ~Animal();
-		Animal & operator=(Animal const &rhs);
-		virtual void	make_sound() const;
-		string			get_type() const;
-	protected:
-		string	_type;
+		Dog();
+		Dog(Dog const &src);
+		virtual ~Dog();
+		Dog & operator=(Dog const &rhs);
+		void	make_sound() const;
 };
 
 #endif

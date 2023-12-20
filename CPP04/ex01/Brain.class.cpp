@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.class.hpp                                   :+:      :+:    :+:   */
+/*   Brain.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 12:57:24 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/14 16:48:25 by sammeuss         ###   ########.fr       */
+/*   Created: 2023/12/15 14:46:23 by sammeuss          #+#    #+#             */
+/*   Updated: 2023/12/15 14:49:35 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_CLASS_HPP
-# define ANIMAL_CLASS_HPP
-# include <iostream>
-# include <string>
-# include <fstream>
-# include <cmath>
+#include "Brain.class.hpp"
 
-using namespace std;
-
-class Animal
+Brain::Brain()
 {
-	public:
-		Animal();
-		Animal(Animal const &src);
-		virtual ~Animal();
-		Animal & operator=(Animal const &rhs);
-		virtual void	make_sound() const;
-		string			get_type() const;
-	protected:
-		string	_type;
-};
+	cout << "Brain constructor called" << endl;
+	return ;
+}
 
-#endif
+Brain::Brain(Brain const &src)
+{
+	cout << "Brain copy constructor called" << endl;
+	return ;
+}
+
+Brain::~Brain()
+{
+	cout << "Brain destructor called" << endl;
+	return ;
+}
+
+Brain &Brain::operator=(Brain const &rhs)
+{
+	return (*this);
+}

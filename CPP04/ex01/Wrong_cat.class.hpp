@@ -1,14 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Doggo.class.cpp                                    :+:      :+:    :+:   */
+/*   Wrong_cat.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 13:04:26 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/14 13:04:45 by sammeuss         ###   ########.fr       */
+/*   Created: 2023/12/15 13:53:06 by sammeuss          #+#    #+#             */
+/*   Updated: 2023/12/15 14:04:25 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Doggo.class.hpp"
+#ifndef WRONG_CAT_CLASS_HPP
+# define WRONG_CAT_CLASS_HPP
+# include <iostream>
+# include <string>
+# include <fstream>
+# include <cmath>
+# include "Wrong_animal.class.hpp"
 
+using namespace std;
+
+class Wrong_cat : public Wrong_animal
+{
+	public:
+		Wrong_cat();
+		Wrong_cat(Wrong_cat const &src);
+		~Wrong_cat();
+		Wrong_cat &operator=(Wrong_cat const &rhs);
+};
+
+#endif
