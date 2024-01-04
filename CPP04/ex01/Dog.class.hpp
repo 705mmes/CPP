@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 14:15:02 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/14 15:41:31 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/04 12:30:00 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 # include <fstream>
 # include <cmath>
 # include "Animal.class.hpp"
-
-using namespace std;
+# include "Brain.class.hpp"
 
 class Dog : public Animal
 {
@@ -28,6 +27,8 @@ class Dog : public Animal
 		virtual ~Dog();
 		Dog & operator=(Dog const &rhs);
 		void	make_sound() const;
+	private:
+		Brain	*_brain;
 };
 
 #endif

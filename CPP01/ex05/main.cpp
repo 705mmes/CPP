@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 10:56:21 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/05 12:35:12 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/03 12:54:23 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int main()
 {
 	Harl	Harl;
-	string str;
-	cout << "What yo want : ";
-	cin >> str;
+	std::string str;
+	std::cout << "What yo want : ";
+	std::cin >> str;
 	while (str != "DEBUG" && str != "INFO" && str != "WARNING" && str != "ERROR")
 	{
-		cout << "Try again mon :";
-		cin >> str;
+		std::cout << "Try again mon :";
+		std::cin >> str;
 	}
 	
 	Harl.complain(str);

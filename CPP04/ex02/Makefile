@@ -6,7 +6,7 @@
 #    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/14 12:56:51 by sammeuss          #+#    #+#              #
-#    Updated: 2024/01/04 12:39:03 by sammeuss         ###   ########.fr        #
+#    Updated: 2024/01/04 14:43:14 by sammeuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ PRINT_NAME  =	CPP04
 PRINT_PREFIX= \033[1m\033[38;5;240m[\033[0m\033[38;5;250m$(PRINT_NAME)\033[1m\033[38;5;240m] \033[38;5;105m~\033[0m
 
 SRC 		=	main \
-				Animal.class \
+				Aanimal.class \
 				Dog.class \
 				Cat.class \
 				Wrong_animal.class \

@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:01:20 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/11/28 16:09:07 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/03 11:13:15 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,14 @@
 # include <iostream>
 # include "Weapon.hpp"
 
-using namespace std;
-
 class	HumanA
 {
 	public:
-		HumanA(string name, Weapon &new_weapon);
+		HumanA(std::string name, Weapon &new_weapon);
 		~HumanA();
 		void	attack() const;
 	private:
-		string	_name;
+		std::string	_name;
 		Weapon	&_weapon;
 };
 

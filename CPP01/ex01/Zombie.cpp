@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:56:03 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/11/24 15:54:56 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/03 11:11:03 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
-	cout << this->name << " has been destroyed" << endl;
+	std::cout << this->name << " has been destroyed" << std::endl;
 	return ;
 }
 
 void	Zombie::announce() const
 {
-	cout << this->name << ": BraiiiiiiinnnzzzZ..." << endl;
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 	return ;
 }
 
 // seter pour modifier des attributs privés
-void	Zombie::setName(string name)
+void	Zombie::setName(std::string name)
 {
 	this->name = name;
 	return ;

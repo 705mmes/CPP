@@ -1,48 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.class.cpp                                      :+:      :+:    :+:   */
+/*   Aanimal.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 13:04:38 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/04 12:56:43 by sammeuss         ###   ########.fr       */
+/*   Created: 2023/12/14 13:00:04 by sammeuss          #+#    #+#             */
+/*   Updated: 2024/01/03 13:01:45 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.class.hpp"
-#include "Cat.class.hpp"
+#include "Aanimal.class.hpp"
 
-Cat::Cat()
+Aanimal::Aanimal()
 {
-	std::cout << "Cat constructor called" << std::endl;
-	this->_type = "Cat";
-	this->_brain = new Brain();
+	std::cout << "Aanimal constructor called" << std::endl;
+	this->_type = "Aanimal";
 	return ;
 }
 
-Cat::Cat(Cat const &src)
+Aanimal::Aanimal(Aanimal const &src)
 {
-	std::cout << "Cat copy constructor called" << std::endl;
+	std::cout << "Aanimal copy constructor called" << std::endl;
 	this->_type = src._type;
-	delete this->_brain;
 	return ;
 }
 
-Cat::~Cat()
+Aanimal::~Aanimal()
 {
-	std::cout << "Cat destructor called" << std::endl;
+	std::cout << "Aanimal destructor called" << std::endl;
 	return ;
 }
 
-Cat &Cat::operator=(Cat const &rhs)
+Aanimal &Aanimal::operator=(Aanimal const &rhs)
 {
 	this->_type = rhs._type;
 	return (*this);
 }
 
-void	Cat::make_sound() const
+void	Aanimal::make_sound() const
 {
 	std::cout << "* " << this->_type << " sound *" << std::endl;
 	return ;
+}
+
+std::string	Aanimal::get_type() const
+{
+	return (this->_type);
 }

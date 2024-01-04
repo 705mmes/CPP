@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 12:57:24 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/14 16:48:25 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/03 13:00:44 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <fstream>
 # include <cmath>
 
-using namespace std;
-
 class Animal
 {
 	public:
@@ -27,9 +25,9 @@ class Animal
 		virtual ~Animal();
 		Animal & operator=(Animal const &rhs);
 		virtual void	make_sound() const;
-		string			get_type() const;
+		std::string			get_type() const;
 	protected:
-		string	_type;
+		std::string	_type;
 };
 
 #endif

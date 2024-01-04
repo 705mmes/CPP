@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 10:54:53 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/05 10:59:26 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/03 12:52:51 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 # include <iostream>
 # include <string>
 
-using namespace std;
-
 class Harl
 {
 	public:
 		Harl();
 		~Harl();
-		void	complain(string level);
+		void	complain(std::string level);
 	private:
 		void	debug(void);
 		void	info(void);

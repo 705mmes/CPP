@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   AMateria.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 17:56:01 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/03 11:11:09 by sammeuss         ###   ########.fr       */
+/*   Created: 2024/01/04 15:24:27 by sammeuss          #+#    #+#             */
+/*   Updated: 2024/01/04 16:09:13 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "AMateria.class.hpp"
 
-Zombie	*zombieHorde(int n, std::string name)
+AMateria::AMateria(const std::string &type)
 {
-	Zombie	*horde;
+	std::cout << "Default AMateria constructor called" << std::endl;
+	this->_type = type;
+	return ;
+}
 
-	horde = new Zombie[n];
-	for (int i = 0; i < n; i++)
-		horde[i].setName(name);
-	return (horde);
+AMateria::~AMateria()
+{
+	std::cout << "Default AMateria destructor called" << std::endl;
+	return ;
+}
+
+std::string const &AMateria::getType() const
+{
+	return (this->_type);
+}
+
+void	AMateria::use(ICharacter	&target)
+{
+	return ;
 }

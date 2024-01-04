@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   New_file.class.hpp                                 :+:      :+:    :+:   */
+/*   Cat.class.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 19:53:23 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/03 12:50:53 by sammeuss         ###   ########.fr       */
+/*   Created: 2023/12/14 14:15:40 by sammeuss          #+#    #+#             */
+/*   Updated: 2024/01/04 14:49:04 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NEW_FILE_CLASS_HPP
-# define NEW_FILE_CLASS_HPP
+#ifndef CAT_CLASS_HPP
+# define CAT_CLASS_HPP
 # include <iostream>
-# include <fstream>
 # include <string>
-# include <vector>
+# include <fstream>
+# include <cmath>
+# include "Aanimal.class.hpp"
+# include "Brain.class.hpp"
 
-class New_file
+class Cat : public Aanimal
 {
 	public:
-		New_file(char* source, char* dest, char *input);
-		~New_file();
-		void	set_output(const char *ext);
-		std::string	get_output() const;
-		void	get_string(std::ifstream *source);
-		void	replace();
-		void	fill();
+		Cat();
+		Cat(Cat const &src);
+		virtual ~Cat();
+		Cat & operator=(Cat const &rhs);
+		void	make_sound() const;
 	private:
-		std::string	_line;
-		std::string 	_source;
-		std::string 	_dest;
-		std::string	_inputFile;
-		std::string	_outputFile;
+		Brain	*_brain;
 };
 
 #endif

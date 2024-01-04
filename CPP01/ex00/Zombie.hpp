@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 12:27:18 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/11/24 14:15:04 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/03 11:09:11 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 # define ZOMBIE_HPP
 # include <iostream>
 
-using namespace std;
-
 class Zombie
 {
 	public:
-		Zombie(string name);
+		Zombie(std::string name);
 		~Zombie();
 		void	announce(void) const;
 	private:
-		string	name;
+		std::string	name;
 };
 
-Zombie	*newZombie(string name);
-void	randomChump(string name);
+Zombie	*newZombie(std::string name);
+void	randomChump(std::string name);
 
 #endif

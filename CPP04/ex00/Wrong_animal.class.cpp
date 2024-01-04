@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:02:13 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/15 14:17:31 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/03 12:59:47 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 Wrong_animal::Wrong_animal() : _type("Wrong_animal")
 {
-	cout << "Wrong_animal default constructor called" << endl;
+	std::cout << "Wrong_animal default constructor called" << std::endl;
 	return ;
 }
 
 Wrong_animal::Wrong_animal(Wrong_animal const &src)
 {
-	cout << "Wrong_animal copy constructor called" << endl;
+	std::cout << "Wrong_animal copy constructor called" << std::endl;
 	this->_type = src._type;
 	return ;
 }
 
 Wrong_animal::~Wrong_animal()
 {
-	cout << "Wrong_animal default destructor called" << endl;
+	std::cout << "Wrong_animal default destructor called" << std::endl;
 	return ;
 }
 
@@ -39,6 +39,6 @@ Wrong_animal &Wrong_animal::operator=(Wrong_animal const &rhs)
 
 void	Wrong_animal::make_sound() const
 {
-	cout << "* " << this->_type << " sound *" << endl;
+	std::cout << "* " << this->_type << " sound *" << std::endl;
 	return ;
 }

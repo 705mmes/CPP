@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 17:56:01 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/03 11:11:09 by sammeuss         ###   ########.fr       */
+/*   Created: 2024/01/04 13:38:51 by sammeuss          #+#    #+#             */
+/*   Updated: 2024/01/04 14:52:29 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Dog.class.hpp"
+#include "Cat.class.hpp"
+#include "Wrong_cat.class.hpp"
 
-Zombie	*zombieHorde(int n, std::string name)
+int main()
 {
-	Zombie	*horde;
-
-	horde = new Zombie[n];
-	for (int i = 0; i < n; i++)
-		horde[i].setName(name);
-	return (horde);
+	const	Dog *hound = new Dog();
+	const	Cat	*catin = new Cat();
+	// const	Aanimal *animal = new Aanimal();
+	hound->make_sound();
+	catin->make_sound();
+	delete hound;
+	delete catin;
+	return (0);
 }

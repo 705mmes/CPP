@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 11:52:06 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 11:17:47 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/03 12:55:01 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <cmath>
 # include <string>
 # include <fstream>
-
-using namespace std;
 
 class Fixed
 {
@@ -37,6 +35,6 @@ class Fixed
 		static const int	_nb_bits;
 };
 
-ostream &	operator<<(ostream & o, Fixed const & rhs);
+std::ostream &	operator<<(std::ostream & o, Fixed const & rhs);
 
 #endif

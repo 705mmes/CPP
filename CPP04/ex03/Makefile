@@ -5,29 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/14 12:56:51 by sammeuss          #+#    #+#              #
-#    Updated: 2024/01/04 12:39:03 by sammeuss         ###   ########.fr        #
+#    Created: 2024/01/04 15:37:55 by sammeuss          #+#    #+#              #
+#    Updated: 2024/01/04 15:38:50 by sammeuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# ############################################################################
-# #d88b_o8b  ,8b.     888  ,dP   ,d8PPPP   o8boooo    8888 888        ,d8PPPP#
-# #d88 8'8b  88'8o    888o8P'    d88ooo    88booop    8888 888        d88ooo #
-# #d88   8b  88PPY8.  888 Y8L  ,88'        88b        8888 888      ,88'     #
-# #Y88   8P  8b   `Y' 888  `8p 88bdPPP     88P        8888 888PPPPP 88bdPPP  #
-# ############################################################################
-
-NAME        =	Animal
+NAME        =	Materia
 PRINT_NAME  =	CPP04
 PRINT_PREFIX= \033[1m\033[38;5;240m[\033[0m\033[38;5;250m$(PRINT_NAME)\033[1m\033[38;5;240m] \033[38;5;105m~\033[0m
 
 SRC 		=	main \
-				Animal.class \
-				Dog.class \
-				Cat.class \
-				Wrong_animal.class \
-				Wrong_cat.class \
-				Brain.class \
+				AMateria.class \
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98

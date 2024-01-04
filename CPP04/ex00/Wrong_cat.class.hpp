@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 13:53:06 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/15 14:04:25 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/03 12:57:19 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <fstream>
 # include <cmath>
 # include "Wrong_animal.class.hpp"
-
-using namespace std;
 
 class Wrong_cat : public Wrong_animal
 {

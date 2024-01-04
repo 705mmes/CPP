@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   AMateria.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 17:56:01 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/03 11:11:09 by sammeuss         ###   ########.fr       */
+/*   Created: 2024/01/04 15:22:59 by sammeuss          #+#    #+#             */
+/*   Updated: 2024/01/04 16:07:55 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef AMATERIA_CLASS_HPP
+# define AMATERIA_CLASS_HPP
+# include <iostream>
+# include "ICharacter.class.hpp"
 
-Zombie	*zombieHorde(int n, std::string name)
+class ICharacter;
+
+class AMateria
 {
-	Zombie	*horde;
+	public:
+		AMateria(const std::string &type);
+		~AMateria();
+		std::string const &getType() const;
+		virtual AMateria	*clone() const = 0;
+		virtual void use(ICharacter	&target);
+	protected:
+		std::string	_type;
+};
 
-	horde = new Zombie[n];
-	for (int i = 0; i < n; i++)
-		horde[i].setName(name);
-	return (horde);
-}
+#endif

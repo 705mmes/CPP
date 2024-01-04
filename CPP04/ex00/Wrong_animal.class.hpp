@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 13:52:08 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/15 14:19:19 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/03 12:59:53 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <fstream>
 # include <cmath>
 
-using namespace std;
-
 class Wrong_animal
 {
 	public:
@@ -28,7 +26,7 @@ class Wrong_animal
 		Wrong_animal &operator=(Wrong_animal const &rhs);
 		void	make_sound() const;
 	protected:
-		string	_type;
+		std::string	_type;
 };
 
 #endif

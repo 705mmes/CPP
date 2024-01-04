@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 19:53:11 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/11 14:13:35 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/03 12:51:56 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,22 @@ void	New_file::set_output(const char *ext)
 	this->_outputFile = this->_inputFile + ext;
 }
 
-string New_file::get_output() const
+std::string New_file::get_output() const
 {
 	return (this->_outputFile);
 }
 
-void	New_file::get_string(ifstream *source)
+void	New_file::get_string(std::ifstream *source)
 {
-	string buff;
+	std::string buff;
 
-	getline(*source, buff);
+	std::getline(*source, buff);
 	while (*source)
 	{
 		this->_line += buff;
 		this->_line += "\n";
 		this->replace();
-		getline(*source, buff);
+		std::getline(*source, buff);
 	}
 	this->fill();
 	return ;
@@ -59,10 +59,10 @@ void	New_file::replace()
 
 void	New_file::fill()
 {
-	ofstream outputFile(this->get_output());
+	std::ofstream outputFile(this->get_output());
 
 	if (!outputFile.is_open())
-		return ((void)(cerr << "Can't open dest file" << endl));
+		return ((void)(std::cerr << "Can't open dest file" << std::endl));
 	outputFile << this->_line;
 	outputFile.close();
 }

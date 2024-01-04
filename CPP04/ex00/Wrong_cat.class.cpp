@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 13:56:19 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/15 14:19:46 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/03 13:00:10 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 Wrong_cat::Wrong_cat()
 {
-	cout << "Wrong_cat default constructor called" << endl;
+	std::cout << "Wrong_cat default constructor called" << std::endl;
 	return ;
 }
 
 Wrong_cat::Wrong_cat(Wrong_cat const &src)
 {
-	cout << "Wrong_cat copy constructor called" << endl;
+	std::cout << "Wrong_cat copy constructor called" << std::endl;
 	this->_type = src._type;
 	return ;
 }
 
 Wrong_cat::~Wrong_cat()
 {
-	cout << "Wrong_cat default destructor called" << endl;
+	std::cout << "Wrong_cat default destructor called" << std::endl;
 	return ;
 }
 
