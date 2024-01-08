@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 19:53:11 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/03 12:51:56 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:59:38 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ void	New_file::get_string(std::ifstream *source)
 
 void	New_file::replace()
 {
-	for (int flag = this->_line.find(this->_source); flag >= 0; flag = this->_line.find(this->_source, flag))
-	{
-		this->_line.erase(flag, this->_source.length());
-		this->_line.insert(flag, this->_dest);
-	}
+	for (int flag = this->_line.find(this->_source); flag >= 0; flag = this->_line.find(this->_source, flag + this->_dest.length()))
+    {
+        this->_line.erase(flag, this->_source.length());
+        this->_line.insert(flag, this->_dest);
+    }
 }
 
 void	New_file::fill()

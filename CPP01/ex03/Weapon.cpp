@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:16:51 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/03 11:15:21 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/08 12:04:29 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Weapon::~Weapon()
 	return ;
 }
 
-std::string	Weapon::getType() const
+std::string	const &Weapon::getType() const
 {
 	return (this->_type);
 }

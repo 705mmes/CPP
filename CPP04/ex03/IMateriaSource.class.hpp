@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   IMateriaSource.class.hpp                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 12:01:18 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/08 12:04:17 by sammeuss         ###   ########.fr       */
+/*   Created: 2024/01/05 14:07:20 by sammeuss          #+#    #+#             */
+/*   Updated: 2024/01/05 14:27:46 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef IMATERIASOURCE_CLASS_HPP
+# define IMATERIASOURCE_CLASS_HPP
 # include <iostream>
+# include "AMateria.class.hpp"
 
-class Weapon
+class IMateriaSource
 {
 	public:
-		Weapon(std::string type);
-		~Weapon();
-	std::string const	&getType() const;
-	void	setType(std::string new_type);
-	private:
-		std::string	_type;
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 #endif

@@ -6,7 +6,7 @@
 #    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/04 15:37:55 by sammeuss          #+#    #+#              #
-#    Updated: 2024/01/04 15:38:50 by sammeuss         ###   ########.fr        #
+#    Updated: 2024/01/05 20:09:27 by sammeuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,10 @@ PRINT_PREFIX= \033[1m\033[38;5;240m[\033[0m\033[38;5;250m$(PRINT_NAME)\033[1m\03
 
 SRC 		=	main \
 				AMateria.class \
+				Character.class \
+				Cure.class \
+				Ice.class \
+				MateriaSource.class \
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98

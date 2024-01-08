@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Cure.class.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 12:01:18 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/08 12:04:17 by sammeuss         ###   ########.fr       */
+/*   Created: 2024/01/05 12:16:22 by sammeuss          #+#    #+#             */
+/*   Updated: 2024/01/05 20:25:22 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef CURE_CLASS_HPP
+# define CURE_CLASS_HPP
 # include <iostream>
+# include "AMateria.class.hpp"
 
-class Weapon
+class AMateria;
+
+class Cure : public AMateria
 {
 	public:
-		Weapon(std::string type);
-		~Weapon();
-	std::string const	&getType() const;
-	void	setType(std::string new_type);
-	private:
-		std::string	_type;
+		Cure();
+		Cure(Cure const &src);
+		~Cure();
+		std::string const &getType() const;
+		virtual AMateria	*clone() const;
+		Cure	&operator=(Cure const &rhs);
 };
 
 #endif
