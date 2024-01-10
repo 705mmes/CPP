@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 13:20:03 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/05 20:31:06 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/10 13:48:33 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,24 @@ Character::Character(std::string name) : _name(name)
 	std::cout << "Default character constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
+	for (int i = 0; i < 100; i++)
+		this->floor[i] = NULL;
 	return ;
 }
 
 Character::~Character()
 {
 	std::cout << "Default character destructor called" << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		if (this->floor[i] != NULL)
+			delete this->floor[i];
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->inventory[i] != NULL)
+			delete this->inventory[i];
+	}
 	return ;
 }
 
@@ -39,10 +51,10 @@ std::string	const	&Character::getName() const
 
 void	Character::equip(AMateria *m)
 {
-	std::cout << this->_name << " grabs " << m << std::endl;
+	std::cout << this->_name << " grabs " << m->getType() << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
-		if (!this->inventory[i])
+		if (this->inventory[i] == NULL)
 		{
 			this->inventory[i] = m;
 			return ;
@@ -54,7 +66,17 @@ void	Character::equip(AMateria *m)
 void	Character::unequip(int idx)
 {
 	if (this->inventory[idx] != NULL)
+	{
+		for (int i = 0; i < 100; i++)
+		{
+			if (this->floor[i] == NULL)
+			{
+				this->floor[i] = this->inventory[idx];
+				break ;
+			}
+		}
 		this->inventory[idx] = NULL;
+	}
 	else
 		std::cout << "Slot is already empty" << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.class.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:10:38 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/05 20:32:30 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/10 14:01:00 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 MateriaSource::MateriaSource()
 {
+	std::cout << "Default MateriaSource constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
 	return ;
@@ -27,11 +28,18 @@ MateriaSource::MateriaSource(MateriaSource	const &src)
 
 MateriaSource::~MateriaSource()
 {
+	std::cout << "Default MateriaSource destructor called" << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->inventory[i])
+			delete this->inventory[i];
+	}
 	return ;
 }
 
 void MateriaSource::learnMateria(AMateria *m)
 {
+	std::cout << "learning " << m->getType() << " materia" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->inventory[i] == NULL)
@@ -46,6 +54,7 @@ void MateriaSource::learnMateria(AMateria *m)
 
 AMateria	*MateriaSource::createMateria(std::string const &type)
 {
+	std::cout << "creating " << type << " materia" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (type == this->inventory[i]->getType())

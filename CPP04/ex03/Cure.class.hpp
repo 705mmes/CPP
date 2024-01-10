@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.class.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 12:16:22 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/05 20:25:22 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:41:23 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Cure : public AMateria
 	public:
 		Cure();
 		Cure(Cure const &src);
-		~Cure();
+		virtual ~Cure();
 		std::string const &getType() const;
 		virtual AMateria	*clone() const;
 		Cure	&operator=(Cure const &rhs);

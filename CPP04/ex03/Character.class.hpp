@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 13:22:10 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/05 20:16:11 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/10 13:31:20 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Character : public ICharacter
 		Character &operator=(Character const &rhs);
 	private:
 		std::string	_name;
+		AMateria	*floor[100];
 		AMateria	*inventory[4];
 };
 
