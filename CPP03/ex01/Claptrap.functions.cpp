@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:04:39 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/20 14:07:02 by smunio           ###   ########.fr       */
+/*   Updated: 2024/01/11 11:09:44 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 void	Claptrap::attack(const std::string &target)
 {
+	std::cout << this->_hit_points << std::endl << this->_energy_points << std::endl;
 	if (this->_energy_points > 0 && this->_hit_points > 0)
 	{
 		std::cout << this->_name << " attacks " << target << " for " << this->_attack_dmg << "points of damage" << std::endl;
 		this->_energy_points--;
 	}
 	if (this->_energy_points <= 0)
-		std::cout << this->_name << " is exhausted" << std::endl;
+		std::cout << this->_name << " tries to attack but is exhausted" << std::endl;
 	else if (this->_hit_points <= 0)
-		std::cout << this->_name << " is ded" << std::endl;
+		std::cout << this->_name << " tries to attack but is ded" << std::endl;
 	return ;
 }
 
@@ -43,9 +44,9 @@ void	Claptrap::be_repaired(unsigned int amount)
 		this->_energy_points--;
 	}
 	if (this->_energy_points <= 0)
-		std::cout << this->_name << " is exhausted" << std::endl;
+		std::cout << this->_name << " tries to repair but is exhausted" << std::endl;
 	else if (this->_hit_points <= 0)
-		std::cout << this->_name << " is ded" << std::endl;
+		std::cout << this->_name << " tries to repair but is ded" << std::endl;
 	return ;
 }
 

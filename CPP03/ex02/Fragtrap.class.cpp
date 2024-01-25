@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:24:29 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/20 14:12:13 by smunio           ###   ########.fr       */
+/*   Updated: 2024/01/11 13:04:52 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,7 @@ Fragtrap::Fragtrap(std::string name) : Claptrap(name)
 
 Fragtrap::Fragtrap(const Fragtrap &src)
 {
-	this->_name = src._name;
-	this->_hit_points = src._hit_points;
-	this->_energy_points = src._energy_points;
-	this->_attack_dmg = src._attack_dmg;
+	*this = src;	
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:04:39 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/20 14:11:48 by smunio           ###   ########.fr       */
+/*   Updated: 2024/01/11 13:10:01 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,13 @@ void	Claptrap::attack(const std::string &target)
 
 void	Claptrap::take_dmg(unsigned int amount)
 {
-	std::cout << "Claptrap " << this->_name << " takes " << amount << " points of damage" << std::endl;
-	if (_hit_points > 0)
+	if (this->_hit_points > 0)
+	{
+		std::cout << "Claptrap " << this->_name << " takes " << amount << " points of damage" << std::endl;
 		this->_hit_points -= amount;
+	}
+	if (this->_hit_points <= 0)
+		std::cout << this->_name << " died" << std::endl;
 	return ;
 }
 
@@ -57,4 +61,9 @@ int	Claptrap::get_hit_points() const
 int	Claptrap::get_energy_points() const
 {
 	return (this->_energy_points);
+}
+
+std::string Claptrap::get_name() const
+{
+	return (this->_name);
 }

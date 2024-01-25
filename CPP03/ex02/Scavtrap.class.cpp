@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:23:13 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/20 14:11:41 by smunio           ###   ########.fr       */
+/*   Updated: 2024/01/11 12:53:33 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,17 @@ Scavtrap &Scavtrap::operator=(Scavtrap const & rhs)
 	return (*this);
 }
 
-void	Scavtrap::attack(std::string target)
+void	Scavtrap::attack(const std::string &target)
 {
-	if (this->_energy_points > 0)
+	if (this->_energy_points > 0 && this->_hit_points > 0)
 	{
 		std::cout << "Scavtrap " << this->_name << " attacks " << target << " for " << this->_attack_dmg << "points of damage" << std::endl;
 		this->_energy_points--;
 	}
-	else
-		std::cout << "Scavtrap " << this->_name << " is exhausted" << std::endl;
+	if (this->_energy_points <= 0)
+		std::cout << "Claptrap " << this->_name << " is exhausted" << std::endl;
+	else if (this->_hit_points <= 0)
+		std::cout << "Claptrap" << this->_name << " is ded" << std::endl;
 	return ;
 }
 

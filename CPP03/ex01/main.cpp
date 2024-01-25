@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:23:17 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/20 14:07:24 by smunio           ###   ########.fr       */
+/*   Updated: 2024/01/11 11:45:34 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int main()
 	{
 		me.attack("leon");
 		me.take_dmg(98);
-		std::cout << me.get_name() << " got " << me.get_hit_points() << " hit points left" << std::endl;
 		me.be_repaired(2);
 		std::cout << me.get_name() << " got " << me.get_hit_points() << " hit points left" << std::endl;
+		me.attack("leon");
 	}
 	return (0);
 }

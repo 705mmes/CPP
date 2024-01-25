@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Scavtrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:23:11 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/13 16:17:38 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/11 12:53:34 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Scavtrap : public Claptrap
 		Scavtrap(const Scavtrap &src);
 		~Scavtrap();
 		Scavtrap & operator=(const Scavtrap & rhs);
-		void	attack(string target);
+		virtual void	attack(const std::string &target);
 		void	guard_guate();
 };
 

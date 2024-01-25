@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:23:11 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/12/20 13:47:48 by smunio           ###   ########.fr       */
+/*   Updated: 2024/01/11 11:41:18 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Scavtrap : public Claptrap
 		Scavtrap(const Scavtrap &src);
 		~Scavtrap();
 		Scavtrap & operator=(const Scavtrap & rhs);
-		void	attack(std::string target);
+		virtual void	attack(const std::string &target);
 		void	guard_guate();
 };
 
