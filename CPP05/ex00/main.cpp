@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:46:36 by smunio            #+#    #+#             */
-/*   Updated: 2024/01/25 21:07:59 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/25 23:46:26 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,7 @@
 
 int main(void)
 {
-    try {
-        Bureaucrat me("sam", 151);
-        std::cout << me;
-    }
-    catch (const WrongGrade &e) {
-        std::cerr << "Caught exception: " << e.what() << std::endl;
-        return (1);
-    }
+    Bureaucrat me("sam", 77);
+    std::cout << me;
     return (0);
 }

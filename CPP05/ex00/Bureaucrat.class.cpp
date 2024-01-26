@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:11:10 by smunio            #+#    #+#             */
-/*   Updated: 2024/01/25 21:07:36 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/25 23:44:50 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,28 @@ Bureaucrat::Bureaucrat()
 
 Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name)
 {
-    if (grade > 150 || grade < 1)
-        throw WrongGrade(grade);
-    std::cout << "Default Bureaucrat constructor called" << std::endl;
-    this->_grade = grade;
+    try
+    {
+        if (grade > 150)
+            throw GradeTooLowException();
+        else if (grade < 1)
+            throw GradeTooHighException();
+        else
+        {
+            std::cout << "Default Bureaucrat constructor called" << std::endl;
+            this->_grade = grade;
+            return ;
+        }
+    }
+    catch (const GradeTooHighException &e) {
+        std::cerr << "Caught exception: " << e.what() << std::endl;
+    }
+    catch (const GradeTooLowException &e) {
+        std::cerr << "Caught exception: " << e.what() << std::endl;
+    }
+    this->_grade = 150;
+    return ;
+        
 }
 
 Bureaucrat::~Bureaucrat()
@@ -62,11 +80,12 @@ std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs)
     return (o);
 }
 
-const char* WrongGrade::what() const throw()
+const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-    if (this->_grade < 1)
-        return ("Grade is too low, it should be >= 1");
-    else if (this->_grade > 150)
-        return ("Grade is too high, it should be <= 150");
-    return (NULL);
+	return ("Grade too low and has been set to 150 by default");
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high and has been set to 150 by default");
 }
