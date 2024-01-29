@@ -6,11 +6,11 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:11:10 by smunio            #+#    #+#             */
-/*   Updated: 2024/01/28 15:54:07 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/29 18:03:56 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.class.hpp"
+#include "AForm.class.hpp"
 
 Bureaucrat::Bureaucrat()
 {
@@ -75,16 +75,37 @@ std::string Bureaucrat::get_name() const
     return (this->_name);
 }
 
-void    Bureaucrat::sign_form(Form &f) const
+void    Bureaucrat::sign_form(AForm &f) const
 {
-    std::cout << this->_name << " tries to sign " << f.get_name() << std::endl;
-    if (f.get_signed() == true)
+    try
     {
-        std::cout << "Form has already being signed" << std::endl;
-        return ;
+        std::cout << this->_name << " tries to sign " << f.get_name() << std::endl;
+        f.be_signed(*this);
     }
-    f.be_signed(*this);
+    catch (const GradeTooLowException &e)
+	{
+		std::cerr << this->_name << " couldn't sign form because " << e.what() << std::endl;
+		return ;
+	}
     return ;
+}
+
+void    Bureaucrat::executeForm(AForm const &form) const
+{
+    try
+    {
+        std::cout << this->_name << " tries to execute "  << form.get_name() << std::endl;
+        form.execute(*this);
+        std::cout << this->_name << " executed " << form.get_name() << std::endl;
+    }
+    catch(const AForm::FormSignedException &e) {
+		std::cerr << this->_name << " can't execute form because " << e.what() << std::endl;
+		return ;
+	}
+	catch(const AForm::GradeTooLowException &e) {
+		std::cerr << this->_name << " can't execute form because " << e.what() << std::endl;
+		return ;
+	}
 }
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs)
