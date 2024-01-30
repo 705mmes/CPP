@@ -6,26 +6,26 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 16:01:53 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/29 15:14:30 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/29 19:36:12 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-Shrubbery::Shrubbery() : AForm("ShrubberyCreationForm", 145, 137)
+Shrubbery::Shrubbery() : AForm("shrubbery creation", 145, 137)
 {
 	std::cout << "Default Shrubbery constructor called" << std::endl;
 	return ;	
 }
 
-Shrubbery::Shrubbery(std::string target) : AForm("ShrubberyCreationForm", 145, 137),
+Shrubbery::Shrubbery(std::string target) : AForm("shrubbery creation", 145, 137),
 	_target(target), _output(target + ".shrubbery")
 {
 	std::cout << "Default Shrubbery constructor called" << std::endl;
 	return ;
 }
 
-Shrubbery::Shrubbery(Shrubbery const &src) : AForm("ShrubberyCreationForm", 145, 137)
+Shrubbery::Shrubbery(Shrubbery const &src) : AForm("shrubbery creation", 145, 137)
 {
 	std::cout << "Shrubbery Copy constructor called" << std::endl;
 	*this = src;

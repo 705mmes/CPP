@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 16:02:08 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/29 15:05:51 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/29 19:48:35 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Shrubbery : public AForm
 		virtual ~Shrubbery();
 		virtual void	execute(Bureaucrat const &executor) const;
 		std::string		get_output() const;
-		void	fill_o(std::ostream &o) const;
+		void	fill_o(std::ostream &o) const;	
 		Shrubbery &operator=(Shrubbery const &rhs);
 	private:
 		std::string _target;

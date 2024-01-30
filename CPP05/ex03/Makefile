@@ -6,7 +6,7 @@
 #    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/04 15:37:55 by sammeuss          #+#    #+#              #
-#    Updated: 2024/01/29 18:13:52 by sammeuss         ###   ########.fr        #
+#    Updated: 2024/01/29 20:43:10 by sammeuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC 		=	main \
 				PresidentialPardonForm \
 				RobotomyRequestForm \
 				ShrubberyCreationForm \
-				
+				Intern.class \
+	
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 

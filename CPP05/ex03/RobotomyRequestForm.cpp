@@ -6,25 +6,25 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 10:17:41 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/29 18:37:06 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/01/29 19:36:24 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-Robotomy::Robotomy() : AForm("RobotomyRequestForm", 72, 45)
+Robotomy::Robotomy() : AForm("robotomy request", 72, 45)
 {
 	std::cout << "Default Robotomy constructor called" << std::endl;
 	return ;	
 }
 
-Robotomy::Robotomy(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
+Robotomy::Robotomy(std::string target) : AForm("robotomy request", 72, 45), _target(target)
 {
 	std::cout << "Default Robotomy constructor called" << std::endl;
 	return ;
 }
 
-Robotomy::Robotomy(Robotomy const &src) : AForm("RobotomyRequestForm", 72, 45)
+Robotomy::Robotomy(Robotomy const &src) : AForm("robotomy request", 72, 45)
 {
 	std::cout << "Copy Robotomy constructor called" << std::endl;
 	*this = src;
