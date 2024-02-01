@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:57:00 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/31 14:12:33 by smunio           ###   ########.fr       */
+/*   Updated: 2024/02/01 12:08:23 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string>
 # include <cstdlib>
 # include <limits>
+# include <iomanip>
 
 class Scalar
 {
@@ -25,6 +26,15 @@ class Scalar
 	private:
 		Scalar();
 };
+
+class IntException {
+	public:
+		virtual const char *what() const throw();
+};
+
+void	print_nan();
+void	print_pinf();
+void	print_minf();
 
 bool	is_char(std::string s);
 bool	is_int(std::string s);

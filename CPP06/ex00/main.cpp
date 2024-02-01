@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:05:48 by smunio            #+#    #+#             */
-/*   Updated: 2024/01/31 14:31:42 by smunio           ###   ########.fr       */
+/*   Updated: 2024/02/01 10:43:21 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@ int main(int ac, char **av)
 {
     if (ac != 2)
         return (1);
-    Scalar::convert(av[1]);
+    try
+    {
+        Scalar::convert(av[1]);
+    }
+    catch (const IntException &e)
+    {
+        std::cerr << "Can't convert because " << e.what() << std::endl;
+    }
     return (0);
 }
