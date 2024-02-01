@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.class.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 15:06:26 by smunio            #+#    #+#             */
-/*   Updated: 2024/02/01 15:42:52 by smunio           ###   ########.fr       */
+/*   Created: 2024/02/01 14:50:38 by smunio            #+#    #+#             */
+/*   Updated: 2024/02/01 15:18:34 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.class.hpp"
+#ifndef SERIALIZER_CLASS_HPP
+# define SERIALIZER_CLASS_HPP
+# include <iostream>
+# include <stdint.h>
 
-int main(void)
+struct Data_s
 {
-    Data    d;
-    d.val = 42;
+    uintptr_t   val;
+}   typedef Data;
 
-    Data    *ptr = &d;
 
-    std::cout << d.val << " " << &d << std::endl;
+class Serializer
+{
+    public:
+        ~Serializer();
+        static uintptr_t serialize(Data* ptr);
+        static Data* deserialize(uintptr_t raw);
+    private:
+        Serializer();
+};
 
-    uintptr_t   o = Serializer::serialize(ptr);
-    ptr = Serializer::deserialize(o);
-    
-    std::cout << ptr->val << " " << ptr << std::endl;
-    return (0);
-}
+#endif

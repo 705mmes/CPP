@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: smunio <smunio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/04 15:37:55 by sammeuss          #+#    #+#              #
-#    Updated: 2024/02/01 15:01:21 by smunio           ###   ########.fr        #
+#    Created: 2024/02/01 15:44:53 by smunio            #+#    #+#              #
+#    Updated: 2024/02/01 15:45:03 by smunio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ PRINT_NAME  =	CPP06
 PRINT_PREFIX= \033[1m\033[38;5;240m[\033[0m\033[38;5;250m$(PRINT_NAME)\033[1m\033[38;5;240m] \033[38;5;105m~\033[0m
 
 SRC 		=	main \
-				Serializer.class \
+				Base.class \
 				
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -g3
