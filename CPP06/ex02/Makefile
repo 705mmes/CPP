@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smunio <smunio@student.42.fr>              +#+  +:+       +#+         #
+#    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/01 15:44:53 by smunio            #+#    #+#              #
-#    Updated: 2024/02/01 15:45:03 by smunio           ###   ########.fr        #
+#    Updated: 2024/02/03 11:07:16 by sammeuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        =	Serialization
+NAME        =	Identify
 PRINT_NAME  =	CPP06
 PRINT_PREFIX= \033[1m\033[38;5;240m[\033[0m\033[38;5;250m$(PRINT_NAME)\033[1m\033[38;5;240m] \033[38;5;105m~\033[0m
 
