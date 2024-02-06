@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
+#    By: smunio <smunio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/04 15:37:55 by sammeuss          #+#    #+#              #
-#    Updated: 2024/02/05 11:28:54 by sammeuss         ###   ########.fr        #
+#    Updated: 2024/02/06 11:15:00 by smunio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ PRINT_PREFIX= \033[1m\033[38;5;240m[\033[0m\033[38;5;250m$(PRINT_NAME)\033[1m\03
 SRC 		=	main \
 				
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -g3
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 
 SRCS        = $(addsuffix .cpp, $(SRC))
 OBJS        = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)

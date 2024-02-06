@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:09:39 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/02/06 10:33:52 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/06 11:49:06 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
+# define MAX_VAL 750
 
 int main(int, char**)
 {
