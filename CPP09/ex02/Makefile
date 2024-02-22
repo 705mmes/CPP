@@ -6,7 +6,7 @@
 #    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/09 14:19:15 by sammeuss          #+#    #+#              #
-#    Updated: 2024/02/15 11:41:54 by sammeuss         ###   ########.fr        #
+#    Updated: 2024/02/20 10:52:36 by sammeuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC 		=	main \
 				PmergeMe \
 
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -g3
 
 SRCS        = $(addsuffix .cpp, $(SRC))
 OBJS        = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)

@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 13:56:23 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/02/15 11:11:22 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/17 10:17:37 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <iostream>
 # include <stack>
 # include <algorithm>
+# include <limits>
 
 class RPN
 {

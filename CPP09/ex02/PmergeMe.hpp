@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 11:45:08 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/02/15 11:47:27 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/20 14:46:34 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,38 @@
 # include <algorithm>
 # include <vector>
 # include <deque>
+# include <limits>
+# include <utility>
+# include <ctime>
 
 class PmergeMe
 {
 	public:
 		PmergeMe();
 		PmergeMe(const PmergeMe &src);
-		PmergeMe	&operator=(const PmergeMe &rhs);
+		PmergeMe			&operator=(const PmergeMe &rhs);
+		std::deque<int>		&get_deque();
+		std::vector<int>	&get_vector();
+		void				print_deque(std::deque<int>	&list) const;
+		void				print_vector(std::vector<int>	&list) const;
+		void				parse_args(char **av);
+		void				merge_deque(std::deque<int>	&list);
+		void				insert_deque(std::deque<int>	&res, std::deque<int>	&list);
+		size_t				binary_search_dq(std::deque<int>	&list, int nb);
+		void				merge_vector(std::vector<int>	&list);
+		void				insert_vector(std::vector<int>	&res, std::vector<int>	&list);
+		size_t				binary_search_vc(std::vector<int>	&list, int nb);
 		~PmergeMe();
 	private:
-	
+		std::vector<int>	_vector_array;
+		std::deque<int>		_deque_array;
+};
+
+class	BadInput : std::exception {
+	public :
+		const char*	what() const throw() {
+			return ("bad input");
+		};
 };
 
 #endif

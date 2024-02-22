@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 13:57:36 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/02/15 11:11:39 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/17 10:38:59 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ bool RPN::parse_input() const
 			signs++;
 		else if (isalnum(this->_calcul[i]))
 			digits++;
+		if (this->_calcul[i] - '0' > INT32_MAX || this->_calcul[i] - '0' < INT32_MIN)
+			return (false);
 		if (signs >= digits)
 			return (false);
 	}
