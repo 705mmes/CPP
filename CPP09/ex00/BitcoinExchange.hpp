@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:21:10 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/02/14 10:18:38 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/03/01 10:39:30 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 # define BITCOINEXCHANGE_CPP
 # include <iostream>
 # include <fstream>
+# include <cstring>
 # include <string>
 # include <map>
+# include <iomanip>
 # include <algorithm>
 # include <sstream>
 # include <ctime>
@@ -26,7 +28,7 @@ class Data
 		Data(std::string file_name);
 		Data(const Data &src);
 		Data &operator=(const Data &rhs);
-		void	fill_map(std::string file_name);
+		int	fill_map(std::string file_name);
 		std::string	get_csv()	const;
 		void	print_map()	const;
 		void	do_your_thing() const;

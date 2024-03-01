@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:46:36 by smunio            #+#    #+#             */
-/*   Updated: 2024/01/25 23:46:26 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/22 09:30:00 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int main(void)
 {
-    Bureaucrat me("sam", 77);
+    Bureaucrat me("sam", 150);
+    std::cout << me;
+    me.increment_grade();
+    // me.decrement_grade();
     std::cout << me;
     return (0);
 }

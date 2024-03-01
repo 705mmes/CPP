@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 16:01:53 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/29 15:14:30 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/22 11:53:29 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,15 @@ Shrubbery::~Shrubbery()
 
 void	Shrubbery::execute(Bureaucrat const &executor) const
 {
-		if (this->get_signed() != true)
-			throw FormSignedException();
-		if (executor.get_grade() > this->get_e())
-			throw GradeTooLowException();
-		std::ofstream	outputFile(this->get_output());
-		if (!outputFile.is_open())
-			return ((void)(std::cerr << "Can't open dest file" << std::endl));
-		this->fill_o(outputFile);
+	if (this->get_signed() != true)
+		throw FormSignedException();
+	if (executor.get_grade() > this->get_e())
+		throw GradeTooLowException();
+	std::ofstream	outputFile;
+	outputFile.open(this->_output.c_str());
+	if (!outputFile.is_open())
+		return ((void)(std::cerr << "Can't open dest file" << std::endl));
+	this->fill_o(outputFile);
 }
 
 std::string	Shrubbery::get_output() const

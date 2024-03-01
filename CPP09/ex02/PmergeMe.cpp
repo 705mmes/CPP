@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 11:41:57 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/02/20 14:30:34 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/03/01 11:42:58 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,11 @@ void	PmergeMe::parse_args(char **av)
 {
 	int tmp;
 	for (int i = 1; av[i]; i++)
-	{
-		tmp = atol(av[i]);
-		if (tmp > INT32_MAX || tmp < INT32_MIN || (tmp == 0 && std::strcmp(av[i], "0")))
+	{	
+		if (!this->is_digit_only(av[i]))
+			throw BadInput();
+		tmp = atoi(av[i]);
+		if (tmp > 2147483647 || tmp < -2147483648 || (tmp == -1 && std::strcmp(av[i], "-1")))
 			throw BadInput();
 		this->_deque_array.push_back(tmp);
 		this->_vector_array.push_back(tmp);
@@ -79,7 +81,9 @@ void	PmergeMe::print_vector(std::vector<int>	&list) const
 
 void	PmergeMe::merge_deque(std::deque<int> &list)
 {
-	if (list.size() == 1)
+	if (list.size() == 2 && list[0] > list[1])
+		std::swap(list[0], list[1]);
+	if (list.size() == 1 || list.size() == 2)
 		return ;
 	std::deque<int> res;
 	for (size_t i = 0; (i + 1) < list.size(); i += 2) {
@@ -135,7 +139,9 @@ size_t	PmergeMe::binary_search_dq(std::deque<int>	&list, int nb)
 
 void	PmergeMe::merge_vector(std::vector<int> &list)
 {
-	if (list.size() == 1)
+	if (list.size() == 2 && list[0] > list[1])
+		std::swap(list[0], list[1]);
+	if (list.size() == 1 || list.size() == 2)
 		return ;
 	std::vector<int> res;
 	for (size_t i = 0; (i + 1) < list.size(); i += 2) {
@@ -187,4 +193,12 @@ size_t	PmergeMe::binary_search_vc(std::vector<int>	&list, int nb)
 			break ;
 	}
 	return (mid);
+}
+
+bool PmergeMe::is_digit_only(std::string line) const
+{
+	for (int i = 0; line[i]; i++)
+		if (!isdigit(line[i]))
+			return (false);
+	return (true);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.class.cpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:11:10 by smunio            #+#    #+#             */
-/*   Updated: 2024/01/28 15:54:07 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/22 09:57:34 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,34 @@ unsigned int Bureaucrat::get_grade() const
 std::string Bureaucrat::get_name() const
 {
     return (this->_name);
+}
+
+void    Bureaucrat::decrement_grade()
+{
+    try
+    {
+        if (this->_grade == 150)
+            throw GradeTooLowException();
+        this->_grade++;
+    }
+    catch (const GradeTooLowException   &e) {
+        std::cerr << "Caught exception: " << e.what() << std::endl;
+        return ;
+    }
+}
+
+void    Bureaucrat::increment_grade()
+{
+    try
+    {
+        if (this->_grade == 1)
+            throw GradeTooHighException();
+        this->_grade--;
+    }
+    catch (const GradeTooLowException   &e) {
+        std::cerr << "Caught exception: " << e.what() << std::endl;
+        return ;
+    }
 }
 
 void    Bureaucrat::sign_form(Form &f) const

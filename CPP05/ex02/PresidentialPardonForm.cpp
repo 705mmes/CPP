@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 10:02:43 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/29 18:20:30 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/22 11:56:02 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-Presidential::Presidential() : AForm("PresidentialPardonForm", 72, 45)
+Presidential::Presidential() : AForm("PresidentialPardonForm", 25, 5)
 {
 	std::cout << "Default Presidential constructor called" << std::endl;
 	return ;	

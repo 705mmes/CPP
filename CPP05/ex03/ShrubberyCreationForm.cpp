@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 16:01:53 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/29 19:36:12 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:02:52 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	Shrubbery::execute(Bureaucrat const &executor) const
 			throw FormSignedException();
 		if (executor.get_grade() > this->get_e())
 			throw GradeTooLowException();
-		std::ofstream	outputFile(this->get_output());
+		std::ofstream	outputFile;
+		outputFile.open(this->_output.c_str());
 		if (!outputFile.is_open())
 			return ((void)(std::cerr << "Can't open dest file" << std::endl));
 		this->fill_o(outputFile);

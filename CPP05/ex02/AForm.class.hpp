@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 21:16:15 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/01/29 18:24:55 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/22 11:39:14 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <fstream>
 # include <cstdlib>
 # include <ctime>
+# include <string>
 # include "Bureaucrat.class.hpp"
 
 class Bureaucrat;

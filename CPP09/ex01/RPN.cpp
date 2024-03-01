@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 13:57:36 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/02/17 10:38:59 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/03/01 11:19:54 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,16 @@ bool RPN::parse_input() const
 	{
 		if (this->_calcul[i] == '-' || this->_calcul[i] == '+' || this->_calcul[i] == '*' || this->_calcul[i] == '/')
 			signs++;
-		else if (isalnum(this->_calcul[i]))
+		else if (isdigit(this->_calcul[i]))
 			digits++;
-		if (this->_calcul[i] - '0' > INT32_MAX || this->_calcul[i] - '0' < INT32_MIN)
+		// std::cout << "digits: " << digits << " signs: " << signs << std::endl;
+		if (isdigit(this->_calcul[i]) && isdigit(this->_calcul[i + 1]))
 			return (false);
 		if (signs >= digits)
 			return (false);
 	}
+	if (digits > signs + 1)
+		return (false);
 	return (true);
 }
 
@@ -75,6 +78,8 @@ void	RPN::do_your_thing()
 			this->_stack.pop();
 			first = this->_stack.top();
 			this->_stack.pop();
+			if (this->_calcul[i] == '/' && (first == 0 || second == 0))
+				throw	SyntaxException();
 			this->_stack.push(this->do_op(this->_calcul[i], first, second));
 			this->_result = this->_stack.top();
 		}

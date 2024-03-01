@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.class.cpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:11:10 by smunio            #+#    #+#             */
-/*   Updated: 2024/01/25 23:44:50 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/22 09:27:26 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,34 @@ const std::string Bureaucrat::get_name() const
     return (this->_name);
 }
 
+void    Bureaucrat::decrement_grade()
+{
+    try
+    {
+        if (this->_grade == 150)
+            throw GradeTooLowException();
+        this->_grade++;
+    }
+    catch (const GradeTooLowException   &e) {
+        std::cerr << "Caught exception: " << e.what() << std::endl;
+        return ;
+    }
+}
+
+void    Bureaucrat::increment_grade()
+{
+    try
+    {
+        if (this->_grade == 1)
+            throw GradeTooHighException();
+        this->_grade--;
+    }
+    catch (const GradeTooLowException   &e) {
+        std::cerr << "Caught exception: " << e.what() << std::endl;
+        return ;
+    }
+}
+
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs)
 {
     o << rhs.get_name() << " bureaucrat grade " << rhs.get_grade() << std::endl;
@@ -82,10 +110,10 @@ std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs)
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade too low and has been set to 150 by default");
+	return ("Grade too low");
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade too high and has been set to 150 by default");
+	return ("Grade too high");
 }

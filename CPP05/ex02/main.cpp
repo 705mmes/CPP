@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:46:36 by smunio            #+#    #+#             */
-/*   Updated: 2024/01/29 18:36:37 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/22 11:59:23 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int main(void)
     AForm   *robo = new Robotomy("leon");
     AForm   *pardon = new Presidential("One nazi");
 
-    // me.sign_form(*shrub);
-    // me.executeForm(*shrub);
+    me.sign_form(*shrub);
+    me.executeForm(*shrub);
 
-    me.sign_form(*robo);
-    me.executeForm(*robo);
+    // me.sign_form(*robo);
+    // me.executeForm(*robo);
 
     // me.sign_form(*pardon);
     // me.executeForm(*pardon);

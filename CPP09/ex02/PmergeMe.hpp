@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 11:45:08 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/02/20 14:46:34 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/03/01 11:39:53 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <limits>
 # include <utility>
 # include <ctime>
+# include <cstring>
 
 class PmergeMe
 {
@@ -37,6 +38,7 @@ class PmergeMe
 		void				merge_vector(std::vector<int>	&list);
 		void				insert_vector(std::vector<int>	&res, std::vector<int>	&list);
 		size_t				binary_search_vc(std::vector<int>	&list, int nb);
+		bool				is_digit_only(std::string line) const;
 		~PmergeMe();
 	private:
 		std::vector<int>	_vector_array;

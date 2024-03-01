@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 13:56:23 by sammeuss          #+#    #+#             */
-/*   Updated: 2024/02/17 10:17:37 by sammeuss         ###   ########.fr       */
+/*   Updated: 2024/02/28 12:09:40 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stack>
 # include <algorithm>
 # include <limits>
+# include <cstring>
 
 class RPN
 {
